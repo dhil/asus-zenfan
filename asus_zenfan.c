@@ -1,5 +1,5 @@
 /**
- * Fan driver for ASUS Zenbook UX31A based.
+ * ASUS Zenbook UX31A (CPU) fan driver.
  * 
  * This driver is based on work by Felipe Contreras <felipe.contreras@gmail.com> (see https://gist.github.com/felipec/6169047)
  * 
