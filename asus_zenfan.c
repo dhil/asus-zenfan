@@ -18,6 +18,7 @@
  
 MODULE_AUTHOR("Daniel Hillerström <dhildotnet@gmail.com>");
 MODULE_DESCRIPTION("ASUS fan driver");
+MODULE_VERSION("1.0");
 MODULE_LICENSE("GPL");
 
 // Convenient macros
