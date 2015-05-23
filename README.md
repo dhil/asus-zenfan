@@ -1,6 +1,6 @@
 ASUS Zenbook UX31A fan driver for Linux
 ===========
-This driver provides a [Linux Thermal Framework](https://www.kernel.org/doc/Documentation/thermal/sysfs-api.txt) interface for changing and querying the fan speed on ASUS Zenbook UX31A. Moreover, the driver ensures that the fan is powered off properly on system shutdown and suspend, and restored to its previous state on system resume.
+This driver provides a [Linux Thermal Framework][2] interface for changing and querying the fan speed on ASUS Zenbook UX31A. Moreover, the driver ensures that the fan is powered off properly on system shutdown and suspend, and restored to its previous state on system resume.
 
 Disclaimer
 ===========
@@ -66,7 +66,7 @@ To get the cooling device type simply read `type`, e.g.:
 cooling_device3 $ cat type
 Fan
 ```
-The type `Fan` will always be returned. The type can be used by programs such as [Linux Thermal Daemon](https://01.org/linux-thermal-daemon/documentation/introduction-thermal-daemon) to determine whether the device is an active or passive cooling device.
+The type `Fan` is always reported. The type can be used by programs such as [Linux Thermal Daemon](https://01.org/linux-thermal-daemon/documentation/introduction-thermal-daemon) to determine the type of a particular cooling device. The reported value is consistent with the suggested thermal sysfs-api naming policy [[2]].
 
 Changing fan state
 -----------
@@ -116,4 +116,6 @@ Acknowledgements
 References
 =============
 1. Forum user prikolchik. *Fan Control on Asus Prime UX31/UX31A/UX32A/UX32VD*. NotebookReview Forum. Published on January 24, 2013. [Available online][1].
+2. Sujith Thomas and Zhang Rui. *Generic Thermal Sysfs driver How To*. Intel Corporation. January 2, 2008. [Available online][2].
 [1]: http://forum.notebookreview.com/threads/fan-control-on-asus-prime-ux31-ux31a-ux32a-ux32vd.705656/
+[2]: https://www.kernel.org/doc/Documentation/thermal/sysfs-api.txt
