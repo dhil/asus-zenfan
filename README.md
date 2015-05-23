@@ -18,11 +18,12 @@ A successful installation creates a directory under `/sys/class/thermal/cooling_
 Changing & querying fan state
 ============
 The driver registers the fan as a Linux Thermal Framework *cooling device*. The framework exposes a generic interface for manipulating thermal devices:
-+ `/sys/class/thermal/cooling_deviceX/`
-⋅⋅+ `cur_state` - reads the current fan speed.
-⋅⋅+ `max_state` - returns the maximum settable fan speed.
-⋅⋅+ `type`      - returns the cooling device type.
-
+```
+/sys/class/thermal/cooling_deviceX/
+├── cur_state    # reports/changes the current fan speed.
+├── max_state    # reports the maximum settable fan speed.
+└── type         # reports the cooling device type.
+```
 The following examples show how to change and query the fan speed, and reset the fan mode. We assume that it is installed as `cooling_device3`.
 
 Querying fan state
