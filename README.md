@@ -75,7 +75,7 @@ In order to change the fan speed simply write the desired speed to `cur_state`:
 cooling_device3 $ echo 150 | tee cur_state
 ```
 A successful write returns nothing, thus *no news is good news*!
-Note that a successful write puts the fan into MANUAL mode.
+Note that a successful write implicitly puts the fan into MANUAL mode.
 You may have to perform the above write as root if your user does not have sufficient privileges.
 Similary, we can power-off the fan:
 ```
