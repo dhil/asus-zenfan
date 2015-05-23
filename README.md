@@ -27,7 +27,7 @@ Optionally check whether the driver was loaded:
 ```
 $ lsmod | grep asus_zenfan
 ```
-A successful installation creates a directory `/sys/class/thermal/cooling_deviceX` where X is some integer.
+A successful installation installs the interface in directory `/sys/class/thermal/cooling_deviceX` where X is some integer.
 
 Background
 ===========
