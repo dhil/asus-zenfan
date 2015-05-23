@@ -105,7 +105,7 @@ $ sudo rmmod asus_zenfan
 
 Comments
 ============
-The driver has been tested on an ASUS Zenbook UX31A, however according to [[1]] the fan control logic used by the driver ought to be applicable to other ASUS Zenbook models. Therefore I have aimed at producing somewhat relative easy generalisable code. In theory the converting global device pointer `cdev` to an array (of size 2) and encapsulate (appropriate) accesses to `cdev` in a simple `for`-loop ought to be sufficient. However, as I do not have access to Zenbook model with several fans I went for the simpler and more target specific implementation.
+The driver has been tested on an ASUS Zenbook UX31A, however according to [[1]] the fan control logic used by the driver ought to be applicable to other ASUS Zenbook models. Therefore I have aimed at producing somewhat relative easy generalisable code. In theory the converting global device pointer `cdev` to an array and encapsulate (appropriate) accesses to `cdev` in a simple `for`-loop ought to be sufficient. However, as I do not have access to Zenbook model with several fans I went for the simpler and more model specific implementation.
 
 TODO
 ============
