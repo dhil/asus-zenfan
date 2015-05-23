@@ -1,6 +1,6 @@
 ASUS Zenbook UX31A fan driver for Linux
 ===========
-This driver provides a Linux [Thermal Framework](https://www.kernel.org/doc/Documentation/thermal/sysfs-api.txt) interface for changing and querying the fan speed on ASUS Zenbook UX31A. Moreover, the driver ensures that the fan is powered off properly on system shutdown and suspend, and restored to its previous state on system resume.
+This driver provides a [Linux Thermal Framework](https://www.kernel.org/doc/Documentation/thermal/sysfs-api.txt) interface for changing and querying the fan speed on ASUS Zenbook UX31A. Moreover, the driver ensures that the fan is powered off properly on system shutdown and suspend, and restored to its previous state on system resume.
 
 Disclaimer
 ===========
@@ -59,7 +59,7 @@ In order to read the current fan speed we query `cur_state`:
 cooling_device3 $ cat cur_state
 100
 ```
-If the fan is in MANUAL mode it is no actually queried instead the value of the latest speed setting operation is reported. When the fan is in AUTO mode the an ACPI call is performed to report the fan speed. The reason for this difference is that querying is only supported when the fan runs in AUTO mode, for more details see [1].
+If the fan is in MANUAL mode it is no actually queried instead the value of the latest speed setting operation is reported. When the fan is in AUTO mode the an ACPI call is performed to report the fan speed. The reason for this difference is that querying is only supported when the fan runs in AUTO mode, for more details see [[1]].
 
 To get the cooling device type simply read `type`, e.g.:
 ```
