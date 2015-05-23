@@ -27,7 +27,7 @@ Optionally check whether the driver was loaded:
 ```
 $ lsmod | grep asus_zenfan
 ```
-A successful installation creates a directory under `/sys/class/thermal/cooling_deviceX` where X is some integer.
+A successful installation creates a directory `/sys/class/thermal/cooling_deviceX` where X is some integer.
 
 Background
 ===========
@@ -97,6 +97,10 @@ By default the fan runs in AUTO mode, and any user-enforced change of fan state 
 ```
 $ sudo rmmod asus_zenfan
 ```
+
+Comments
+============
+The driver has been tested on an ASUS Zenbook UX31A, however according to [[1]] the fan control logic used by the driver ought to be applicable to other ASUS Zenbook models. Therefore I have aimed at producing somewhat relative easy generalisable code. In theory the converting global device pointer `cdev` to an array (of size 2) and encapsulate (appropriate) accesses to `cdev` in a simple `for`-loop ought to be sufficient. However, as I do not have access to Zenbook model with several fans I went for the simpler and more target specific implementation.
 
 TODO
 ============
