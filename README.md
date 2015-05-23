@@ -47,12 +47,12 @@ The following examples show how to change and query the fan speed, and reset the
 
 Querying fan state
 -----------
-We can determine the maximum settable speed:
+We can determine the maximum permissible speed:
 ```
 cooling_device3 $ cat max_state
 255
 ```
-There is no method to determine the minimum settable speed, however as one might expect it is 0 which is equivalent to powering off the fan. Thus, the discrete range [0,255] constitute all the possible fan speed settings.
+There is no method to determine the minimum settable speed, however as one might expect it is 0 which is equivalent to powering off the fan. Thus, the discrete set {0,...,255} constitute all the permissible fan speed settings.
 
 In order to read the current fan speed we query `cur_state`:
 ```
@@ -81,14 +81,19 @@ Similary, we can power-off the fan:
 ```
 cooling_device3 $ echo 0 | tee cur_state
 ```
-Attempting to write a speed value less than 0 or greater than 255 results in an error:
+Attempting to write a speed value outside the permissible range results in an error:
 ```
 cooling_device3 $ echo -25 | tee cur_state
 -25
 tee: cur_state: Invalid argument
-cooling device3 $ echo 256 | tee cur_state
+cooling_device3 $ echo 256 | tee cur_state
 256
 tee: cur_state: Invalid argument
+```
+An attempt to query or change the fan speed fails with a "device is busy" error when the fan is in SUSPENDED state:
+```
+cooling_device3 $ cat cur_state
+cat: cur_state: Device or resource busy
 ```
 
 Resetting the fan
