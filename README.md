@@ -89,4 +89,7 @@ Acknowledgements
 * Thanks to Felipe Contreras as this work is based on [previous work by him](https://gist.github.com/felipec/6169047). However, this driver behaves properly when the system is suspended.
 * Thanks to NotebookReview forum-user "prikolchik" for providing essential knowledge about ACPI fan control primitives for the ASUS Zenbook series. The thread is available on the [NotebookReview forum][1].
 
+References
+=============
+\[1\] Forum user prikolchik. *Fan Control on Asus Prime UX31/UX31A/UX32A/UX32VD*. NotebookReview Forum. Published on January 24, 2013. [Available online][1].
 [1]: http://forum.notebookreview.com/threads/fan-control-on-asus-prime-ux31-ux31a-ux32a-ux32vd.705656/
