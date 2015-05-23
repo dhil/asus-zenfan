@@ -2,6 +2,20 @@ ASUS Zenbook UX31A fan driver for Linux
 ===========
 This driver provides a Linux [Thermal Framework](https://www.kernel.org/doc/Documentation/thermal/sysfs-api.txt) interface for changing and querying the fan speed on ASUS Zenbook UX31A. Moreover, the driver ensures that the fan is powered off properly on system shutdown and suspend, and restored to its previous state on system resume.
 
+Disclaimer
+===========
+This software is provided by the copyright holders and contributors "as is"
+and any express or implied warranties, including, but not limited to, the
+implied warranties of merchantability and fitness for a particular purpose
+are disclaimed. In no event shall the copyright owner or contributors be
+liable for any direct, indirect, incidental, special, exemplary, or
+consequential damages (including, but not limited to, procurement of
+substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in
+contract, strict liability, or tort (including negligence or otherwise)
+arising in any way out of the use of this software, even if advised of the
+possibility of such damage. 
+
 Installation
 ===========
 Build the driver from source using make, e.g.
@@ -14,6 +28,11 @@ Optionally check whether the driver was loaded:
 $ lsmod | grep asus_zenfan
 ```
 A successful installation creates a directory under `/sys/class/thermal/cooling_deviceX` where X is some integer.
+
+Background
+===========
+Internally, the fan driver distinguishes between two modes: *AUTO* and *MANUAL*. AUTO mode implies that the fan controller adjusts fan speed automatically. Conversely, MANUAL mode implies that the fan is controlled by a user. In MANUAL mode the fan controller will no longer adjust speed automatically. Consequently, the user must ensure that the system is properly cooled.
+Furthermore, the driver also distinguishes between two states: *ACTIVE* and *SUSPENDED*. These two states are used to ensure appropriate and safe behaviour during system suspend and resume. When in ACTIVE state the driver accepts queries, but rejects queries when in SUSPENDED state.
 
 Changing & querying fan state
 ============
