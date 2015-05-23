@@ -91,5 +91,5 @@ Acknowledgements
 
 References
 =============
-\[1\] Forum user prikolchik. *Fan Control on Asus Prime UX31/UX31A/UX32A/UX32VD*. NotebookReview Forum. Published on January 24, 2013. [Available online][1].
+⋅⋅⋅\[1\] Forum user prikolchik. *Fan Control on Asus Prime UX31/UX31A/UX32A/UX32VD*. NotebookReview Forum. Published on January 24, 2013. [Available online][1].⋅⋅
 [1]: http://forum.notebookreview.com/threads/fan-control-on-asus-prime-ux31-ux31a-ux32a-ux32vd.705656/
