@@ -253,8 +253,9 @@ static int __init fan_init(void) {
   // Register notifier
   nb_suspend_reg_status = register_pm_notifier(&suspend_handler);
   if (nb_suspend_reg_status != 0) {
-    thermal_cooling_device_unregister(cdev);
+    fan_set_auto();
     cdev_data_destroy(fan_data);
+    thermal_cooling_device_unregister(cdev);
     printk(KERN_CRIT "Failed to register CPU notification handler.\n");
     return -1;
   }
@@ -262,8 +263,9 @@ static int __init fan_init(void) {
   nb_shutdown_reg_status = register_reboot_notifier(&shutdown_handler);
   if (nb_shutdown_reg_status != 0) {
     unregister_pm_notifier(&suspend_handler);
-    thermal_cooling_device_unregister(cdev);
+    fan_set_auto();
     cdev_data_destroy(fan_data);
+    thermal_cooling_device_unregister(cdev);
     printk(KERN_CRIT "Failed to register CPU notification handler.\n");
     return -1;
   }
