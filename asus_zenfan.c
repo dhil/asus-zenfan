@@ -15,7 +15,7 @@
 #include <linux/suspend.h> // Suspend notification
 #include <linux/reboot.h>  // Power-off notification
 #include <linux/mutex.h>   // Mutual exclusion
- 
+
 MODULE_AUTHOR("Daniel Hillerström <dhildotnet@gmail.com>");
 MODULE_DESCRIPTION("ASUS fan driver");
 MODULE_VERSION("1.0");
@@ -118,7 +118,7 @@ static int fan_get_cur_speed(struct thermal_cooling_device *cdev, unsigned long 
     value = (unsigned long)data->speed;
     r = AE_OK;
   } else {
-    r = 0; // it is suspended.
+    r = -EAGAIN; // it is suspended.
     value = 0;
   }
   
