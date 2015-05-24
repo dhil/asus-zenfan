@@ -1,6 +1,6 @@
 ASUS Zenbook UX31A fan driver for Linux
 ===========
-This driver provides a [Linux Thermal Framework][2] interface for changing and querying the fan speed on ASUS Zenbook UX31A. Moreover, the driver ensures that the fan is powered off properly on system shutdown and suspend, and restored to its previous state on system resume.
+This driver provides a [Linux Thermal Framework][2] interface for controlling the ASUS Zenbook UX31A fan. Moreover, the driver ensures that the fan is powered off properly on system shutdown and suspend, and restored to its previous state on system resume.
 
 Disclaimer
 ===========
