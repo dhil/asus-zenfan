@@ -90,10 +90,10 @@ cooling_device3 $ echo 256 | tee cur_state
 256
 tee: cur_state: Invalid argument
 ```
-An attempt to query or change the fan speed fails with a "device is busy" error when the fan is in SUSPENDED state:
+An attempt to query or change the fan speed fails with a "temporarily unavailable" error when the fan is in SUSPENDED state:
 ```
 cooling_device3 $ cat cur_state
-cat: cur_state: Device or resource busy
+cat: cur_state: Resource temporarily unavailable
 ```
 
 Resetting the fan
